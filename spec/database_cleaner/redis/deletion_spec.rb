@@ -5,7 +5,7 @@ require 'yaml'
 RSpec.describe DatabaseCleaner::Redis::Deletion do
   around do |example|
     @config = YAML::load(File.open("spec/support/redis.yml"))
-    @redis = ::Redis.new :url => config['test']['url']
+    @redis = ::Redis.new :url => @config['test']['url']
 
     example.run
 
