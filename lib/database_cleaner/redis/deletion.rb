@@ -19,6 +19,10 @@ module DatabaseCleaner
 
         connection.quit unless db == :default
       end
+      
+      def clean_all
+        connection.flushall
+      end
 
       private
 
